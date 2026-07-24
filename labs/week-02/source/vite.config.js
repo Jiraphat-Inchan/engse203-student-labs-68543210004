@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/engse203-student-labs-68543210004/labs/week-02/',
-  // ...
+  base: './', // <-- เพิ่มบรรทัดนี้ลงไป
+  build: {
+    outDir: 'docs' // หรือ dist ตามที่โปรเจกต์ตั้งไว้
+  }
 })

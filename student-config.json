@@ -1,9 +1,9 @@
 {
   "course": "ENGSE203",
   "studentId": "68543210004",
-  "studentName": "จิราพัชร อินจันทร์",
+  "studentName": "Jiraphat Inchan",
   "section": "SEC2",
   "githubUsername": "Jiraphat-Inchan",
   "repositoryName": "engse203-student-labs-68543210004",
-  "repositoryMode": "migration"
+  "repositoryMode": "new-course"
 }

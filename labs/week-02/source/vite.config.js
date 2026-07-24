@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: './', // <-- เพิ่มบรรทัดนี้ลงไป
+  base: './',
   build: {
-    outDir: 'docs' // หรือ dist ตามที่โปรเจกต์ตั้งไว้
+    outDir: 'docs', // <-- บังคับให้สร้างไฟล์ไปไว้ที่โฟลเดอร์ docs
   }
 })

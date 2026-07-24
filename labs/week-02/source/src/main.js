@@ -1,8 +1,9 @@
-import "./style.css";
+import './style.css';
 import { fetchLearningTasks } from "./api.js";
 import { filterTasks, getStats } from "./utils.js";
 import { renderStats, renderTasks, setMessage } from "./ui.js";
 
+const url = `${import.meta.env.BASE_URL}data/learning-tasks.json`;
 const elements = {
   message: document.querySelector("#app-message"),
   stats: document.querySelector("#stats"),

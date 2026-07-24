@@ -1,9 +1,7 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: "./", // <-- ต้องเป็น "./" เท่านั้น ห้ามใส่ชื่อ repository
-  build: {
-    outDir: "docs",
-    emptyOutDir: true,
-  },
-});
+  // ตั้งค่า base ให้ตรงกับชื่อ repo และ path บน GitHub Pages
+  base: '/engse203-student-labs-68543210004/labs/week-02/',
+  // ... การตั้งค่าอื่นๆ
+})

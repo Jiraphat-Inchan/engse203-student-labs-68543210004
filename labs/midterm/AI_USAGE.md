@@ -1,6 +1,6 @@
 # AI Usage Log — สอบกลางภาค ENGSE203 (ภาคปฏิบัติ)
 
-**ชื่อ–นามสกุล:** ______________________ **รหัส:** ______________ **Sec:** 2 **ชุด:** B
+**ชื่อ–นามสกุล:** นายจิราพัชร อินจันทร์ **รหัส:** 68543210004-6 **Sec:** 2 **ชุด:** B
 
 ---
 
@@ -39,10 +39,10 @@
 
 | เวลา | งาน | Prompt ที่ถาม | AI ตอบว่าอะไร | ฉันทำอะไรต่อ |
 |---|---|---|---|---|
-|  | B1 |   |  |  |
-|  | B2 |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+|  | B2.1 | "ขอแนวทางการทำ Controlled Component สำหรับช่อง Search Input และการจัดการ Local State ใน React Page Component" | ให้เพิ่ม state searchText และใส่ input เหนือรายการใน DashboardPage | ประกาศ useState และวางช่อง input พร้อม binding value และ onChange · พิมพ์ตัวอักษรแล้วปรากฏในช่องค้นหาถูกต้อง |
+|  | B2.2 | "ขอวิธีการสร้าง Multi-field Case-insensitive Filtering Function สำหรับ Object Array จาก Query String Input" | แนะนำให้เพิ่ม logic กรองข้อความแบบ toLowerCase() และ .includes() ใน filteredRequests | แก้เงื่อนไขกรองใน DashboardPage ให้ค้นจาก requestType, title, location แบบ case-insensitive · ทดสอบพิมพ์ "ซ่อม" ได้การ์ดตรงตามโจทย์ |
+|  | B2.3 | "ออกแบบ Combined Filter Predicate ที่รองรับทั้ง Categorical Filter (status) และ Text Search Predicate พร้อมกัน" | ยืนยันว่า logic matchesStatus && matchesSearch ใช้ได้แล้ว แต่ให้เช็ก key ใน object ให้ตรง | เพิ่มการเช็ก property request.requestType ในเงื่อนไขค้นหาเพิ่มเติม · ทดสอบเลือก "เสร็จสิ้น" + พิมพ์ "ซ่อม" ได้การ์ด REQ-104 ใบเดียว |
+|  | B2.4 | "ออกแบบ Conditional Rendering สำหรับ Empty Data State และแยกสัดส่วนการคำนวณ Derived State ระหว่าง Data View กับ Global Data" | ให้ตรวจสอบข้อความ Empty state ใน RequestList และยืนยันว่า summary คิดจาก requests | ปลี่ยนข้อความใน RequestList เป็น "ไม่พบคำร้องที่ตรงกับการค้นหา" และนำ RequestCard มา import · พิมพ์ "zzz" ได้ข้อความถูกต้องและแผงสรุปนับยอดรวมคงเดิม |
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |

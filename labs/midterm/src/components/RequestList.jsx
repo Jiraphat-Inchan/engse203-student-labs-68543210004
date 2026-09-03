@@ -1,6 +1,6 @@
-import RequestCard from './RequestCard.jsx'; 
+import RequestCard from './RequestCard.jsx';
 
-function RequestList({ requests, onDeleteRequest }) {
+function RequestList({ requests, onDeleteRequest, onAcknowledge }) {
   if (requests.length === 0) {
     return (
       <p className="empty-message" role="status">
@@ -16,6 +16,7 @@ function RequestList({ requests, onDeleteRequest }) {
           key={request.id}
           request={request}
           onDeleteRequest={onDeleteRequest}
+          onAcknowledge={onAcknowledge}
         />
       ))}
     </div>

@@ -1,6 +1,20 @@
 import { Link } from 'react-router-dom';
 
 function RequestCard({ request, onDeleteRequest, onAcknowledge }) {
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    onDeleteRequest(request.id);
+  };
+
+  const handleAcknowledge = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (onAcknowledge) {
+      onAcknowledge(request.id);
+    }
+  };
+
   return (
     <article className="request-card">
       <div>
@@ -12,8 +26,24 @@ function RequestCard({ request, onDeleteRequest, onAcknowledge }) {
         <p><span className={`badge ${request.status}`}>{request.status}</span> · {request.priority}</p>
       </div>
       <div className="request-card-actions">
-        {/* TODO B3: เพิ่มปุ่ม "รับเรื่อง" ที่แสดงเฉพาะการ์ดสถานะ pending (เรียก onAcknowledge) */}
-        <button className="button danger" type="button" onClick={() => onDeleteRequest(request.id)} aria-label={`ลบคำร้อง ${request.id}`}>
+        {/* CP-B3.1: ปุ่ม "รับเรื่อง" แสดงเฉพาะการ์ดที่มีสถานะ pending */}
+        {request.status === 'pending' && (
+          <button
+            className="button primary"
+            type="button"
+            onClick={handleAcknowledge}
+            aria-label={`รับเรื่องคำร้อง ${request.id}`}
+          >
+            รับเรื่อง
+          </button>
+        )}
+
+        <button
+          className="button danger"
+          type="button"
+          onClick={handleDelete}
+          aria-label={`ลบคำร้อง ${request.id}`}
+        >
           ลบ
         </button>
       </div>

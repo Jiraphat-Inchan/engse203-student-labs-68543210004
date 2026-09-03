@@ -53,13 +53,13 @@ function DashboardPage() {
     completed: requests.filter((request) => request.status === 'completed').length,
   }), [requests]);
 
-  // CP-B2.2: Filter ตามสถานะ และ ข้อความค้นหา (ประเภท/สถานที่แบบ Case-Insensitive)
   const filteredRequests = requests.filter((request) => {
     const matchesStatus = statusFilter === 'all' || request.status === statusFilter;
 
     const query = searchText.trim().toLowerCase();
     const matchesSearch =
       query === '' ||
+      (request.requestType && request.requestType.toLowerCase().includes(query)) || // เพิ่มจุดนี้
       (request.title && request.title.toLowerCase().includes(query)) ||
       (request.type && request.type.toLowerCase().includes(query)) ||
       (request.location && request.location.toLowerCase().includes(query));
@@ -67,7 +67,7 @@ function DashboardPage() {
     return matchesStatus && matchesSearch;
   });
 
-  // แก้ไข: เพิ่มฟังก์ชัน handleRetry ที่หายไป
+  
   function handleRetry() {
     if (scenario) setSearchParams({});
     else reload();

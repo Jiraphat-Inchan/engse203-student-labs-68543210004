@@ -39,11 +39,11 @@
 
 | เวลา | งาน | Prompt ที่ถาม | AI ตอบว่าอะไร | ฉันทำอะไรต่อ |
 |---|---|---|---|---|
-|  | B2.1 | "ขอแนวทางการทำ Controlled Component สำหรับช่อง Search Input และการจัดการ Local State ใน React Page Component" | ให้เพิ่ม state searchText และใส่ input เหนือรายการใน DashboardPage | ประกาศ useState และวางช่อง input พร้อม binding value และ onChange · พิมพ์ตัวอักษรแล้วปรากฏในช่องค้นหาถูกต้อง |
-|  | B2.2 | "ขอวิธีการสร้าง Multi-field Case-insensitive Filtering Function สำหรับ Object Array จาก Query String Input" | แนะนำให้เพิ่ม logic กรองข้อความแบบ toLowerCase() และ .includes() ใน filteredRequests | แก้เงื่อนไขกรองใน DashboardPage ให้ค้นจาก requestType, title, location แบบ case-insensitive · ทดสอบพิมพ์ "ซ่อม" ได้การ์ดตรงตามโจทย์ |
-|  | B2.3 | "ออกแบบ Combined Filter Predicate ที่รองรับทั้ง Categorical Filter (status) และ Text Search Predicate พร้อมกัน" | ยืนยันว่า logic matchesStatus && matchesSearch ใช้ได้แล้ว แต่ให้เช็ก key ใน object ให้ตรง | เพิ่มการเช็ก property request.requestType ในเงื่อนไขค้นหาเพิ่มเติม · ทดสอบเลือก "เสร็จสิ้น" + พิมพ์ "ซ่อม" ได้การ์ด REQ-104 ใบเดียว |
-|  | B2.4 | "ออกแบบ Conditional Rendering สำหรับ Empty Data State และแยกสัดส่วนการคำนวณ Derived State ระหว่าง Data View กับ Global Data" | ให้ตรวจสอบข้อความ Empty state ใน RequestList และยืนยันว่า summary คิดจาก requests | ปลี่ยนข้อความใน RequestList เป็น "ไม่พบคำร้องที่ตรงกับการค้นหา" และนำ RequestCard มา import · พิมพ์ "zzz" ได้ข้อความถูกต้องและแผงสรุปนับยอดรวมคงเดิม |
-|  |  |  |  |  |
+| 15:33 | B2.1 | "ขอแนวทางการทำ Controlled Component สำหรับช่อง Search Input และการจัดการ Local State ใน React Page Component" | ให้เพิ่ม state searchText และใส่ input เหนือรายการใน DashboardPage | ประกาศ useState และวางช่อง input พร้อม binding value และ onChange · พิมพ์ตัวอักษรแล้วปรากฏในช่องค้นหาถูกต้อง |
+| 15:46 | B2.2 | "ขอวิธีการสร้าง Multi-field Case-insensitive Filtering Function สำหรับ Object Array จาก Query String Input" | แนะนำให้เพิ่ม logic กรองข้อความแบบ toLowerCase() และ .includes() ใน filteredRequests | แก้เงื่อนไขกรองใน DashboardPage ให้ค้นจาก requestType, title, location แบบ case-insensitive · ทดสอบพิมพ์ "ซ่อม" ได้การ์ดตรงตามโจทย์ |
+| 15:57 | B2.3 | "ออกแบบ Combined Filter Predicate ที่รองรับทั้ง Categorical Filter (status) และ Text Search Predicate พร้อมกัน" | ยืนยันว่า logic matchesStatus && matchesSearch ใช้ได้แล้ว แต่ให้เช็ก key ใน object ให้ตรง | เพิ่มการเช็ก property request.requestType ในเงื่อนไขค้นหาเพิ่มเติม · ทดสอบเลือก "เสร็จสิ้น" + พิมพ์ "ซ่อม" ได้การ์ด REQ-104 ใบเดียว |
+| 16:09 | B2.4 | "ออกแบบ Conditional Rendering สำหรับ Empty Data State และแยกสัดส่วนการคำนวณ Derived State ระหว่าง Data View กับ Global Data" | ให้ตรวจสอบข้อความ Empty state ใน RequestList และยืนยันว่า summary คิดจาก requests | ปลี่ยนข้อความใน RequestList เป็น "ไม่พบคำร้องที่ตรงกับการค้นหา" และนำ RequestCard มา import · พิมพ์ "zzz" ได้ข้อความถูกต้องและแผงสรุปนับยอดรวมคงเดิม |
+| 17:04 | B3.1 | "วิธีทำ Action Event Handling แบบ Conditional Rendering บน UI Component " | ให้เพิ่มปุ่ม "รับเรื่อง" ใน RequestCard โดยเช็กเงื่อนไข status === 'pending' | เขียนปุ่มรับเรื่องใส่ใน RequestCard เพิ่ม handler onAcknowledge พร้อม e.stopPropagation() และส่งต่อ prop ผ่าน RequestList · การ์ด pending มีปุ่มรับเรื่องขึ้นเฉพาะใบที่กำหนด |
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |

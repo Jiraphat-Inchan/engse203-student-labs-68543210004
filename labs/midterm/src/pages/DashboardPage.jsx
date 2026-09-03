@@ -47,11 +47,11 @@ function DashboardPage() {
   }, [scenario, reloadKey]);
 
   const summary = useMemo(() => ({
-    total: requests.length,
-    pending: requests.filter((request) => request.status === 'pending').length,
-    inProgress: requests.filter((request) => request.status === 'in-progress').length,
-    completed: requests.filter((request) => request.status === 'completed').length,
-  }), [requests]);
+  total: requests.length,
+  pending: requests.filter((request) => request.status === 'pending').length,
+  inProgress: requests.filter((request) => request.status === 'in-progress').length,
+  completed: requests.filter((request) => request.status === 'completed').length,
+}), [requests]);
 
   const filteredRequests = requests.filter((request) => {
     const matchesStatus = statusFilter === 'all' || request.status === statusFilter;

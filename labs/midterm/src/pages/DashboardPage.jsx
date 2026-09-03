@@ -18,7 +18,7 @@ function DashboardPage() {
   const [requests, setRequests] = useState([]);
   const [statusFilter, setStatusFilter] = useState('all');
   
-  // CP-B2.1: เพิ่ม state สำหรับข้อความค้นหา
+  // CP-B2.1: State ข้อความค้นหา
   const [searchText, setSearchText] = useState('');
   
   const [errorMessage, setErrorMessage] = useState('');
@@ -53,10 +53,21 @@ function DashboardPage() {
     completed: requests.filter((request) => request.status === 'completed').length,
   }), [requests]);
 
-  const filteredRequests = statusFilter === 'all'
-    ? requests
-    : requests.filter((request) => request.status === statusFilter);
+  // CP-B2.2: Filter ตามสถานะ และ ข้อความค้นหา (ประเภท/สถานที่แบบ Case-Insensitive)
+  const filteredRequests = requests.filter((request) => {
+    const matchesStatus = statusFilter === 'all' || request.status === statusFilter;
 
+    const query = searchText.trim().toLowerCase();
+    const matchesSearch =
+      query === '' ||
+      (request.title && request.title.toLowerCase().includes(query)) ||
+      (request.type && request.type.toLowerCase().includes(query)) ||
+      (request.location && request.location.toLowerCase().includes(query));
+
+    return matchesStatus && matchesSearch;
+  });
+
+  // แก้ไข: เพิ่มฟังก์ชัน handleRetry ที่หายไป
   function handleRetry() {
     if (scenario) setSearchParams({});
     else reload();
@@ -108,7 +119,6 @@ function DashboardPage() {
               <FilterBar value={statusFilter} onFilterChange={setStatusFilter} />
             </div>
 
-            {/* CP-B2.1: ช่องค้นหาเหนือรายการคำร้อง */}
             <div className="search-bar">
               <input
                 type="search"
@@ -120,7 +130,6 @@ function DashboardPage() {
               />
             </div>
 
-            {/* TODO B3: ส่ง onAcknowledge={handleAcknowledge} ให้ RequestList เพื่อให้การ์ด pending มีปุ่ม "รับเรื่อง" */}
             <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} />
           </section>
         </>

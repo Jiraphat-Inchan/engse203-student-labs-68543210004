@@ -17,7 +17,10 @@ function DashboardPage() {
   const [loadState, setLoadState] = useState('idle');
   const [requests, setRequests] = useState([]);
   const [statusFilter, setStatusFilter] = useState('all');
-  // TODO B2: เพิ่ม state สำหรับข้อความค้นหา ที่นี่
+  
+  // CP-B2.1: เพิ่ม state สำหรับข้อความค้นหา
+  const [searchText, setSearchText] = useState('');
+  
   const [errorMessage, setErrorMessage] = useState('');
   const [notice, setNotice] = useState('');
 
@@ -47,27 +50,27 @@ function DashboardPage() {
     total: requests.length,
     pending: requests.filter((request) => request.status === 'pending').length,
     inProgress: requests.filter((request) => request.status === 'in-progress').length,
-    completed: requests.filter((request) => request.status === 'completed').length, // แก้จาก 'in-progress' เป็น 'completed'
+    completed: requests.filter((request) => request.status === 'completed').length,
   }), [requests]);
 
-const filteredRequests = statusFilter === 'all'
-  ? requests
-  : requests.filter((request) => request.status === statusFilter);
+  const filteredRequests = statusFilter === 'all'
+    ? requests
+    : requests.filter((request) => request.status === statusFilter);
 
   function handleRetry() {
     if (scenario) setSearchParams({});
     else reload();
   }
 
-async function handleDelete(requestId) {
-  try {
-    const nextRequests = await deleteRequest(requestId); // <--- เพิ่ม await ตรงนี้
-    setRequests(nextRequests);
-    setNotice(`ลบคำร้อง ${requestId} แล้ว`);
-  } catch (error) {
-    setNotice(error instanceof Error ? error.message : 'ลบคำร้องไม่สำเร็จ');
+  async function handleDelete(requestId) {
+    try {
+      const nextRequests = await deleteRequest(requestId);
+      setRequests(nextRequests);
+      setNotice(`ลบคำร้อง ${requestId} แล้ว`);
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'ลบคำร้องไม่สำเร็จ');
+    }
   }
-}
 
   async function handleReset() {
     if (!window.confirm('ต้องการคืนข้อมูลตัวอย่างเริ่มต้นหรือไม่?')) return;
@@ -104,7 +107,19 @@ async function handleDelete(requestId) {
               <h2 id="request-list-title">รายการคำร้อง</h2>
               <FilterBar value={statusFilter} onFilterChange={setStatusFilter} />
             </div>
-            {/* TODO B2: วางช่อง <input> ค้นหา ตรงนี้ (เหนือรายการ) แล้วกรองร่วมกับตัวกรองสถานะ ค้นจากประเภท/สถานที่ */}
+
+            {/* CP-B2.1: ช่องค้นหาเหนือรายการคำร้อง */}
+            <div className="search-bar">
+              <input
+                type="search"
+                className="input"
+                placeholder="ค้นหาจากประเภทหรือสถานที่"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                data-testid="search-input"
+              />
+            </div>
+
             {/* TODO B3: ส่ง onAcknowledge={handleAcknowledge} ให้ RequestList เพื่อให้การ์ด pending มีปุ่ม "รับเรื่อง" */}
             <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} />
           </section>

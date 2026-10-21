@@ -1,0 +1,16 @@
+{
+  "week": "week-10",
+  "title": "Lab 10: Metadata and Version Control",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004",
+  "originalCommit": "abc12345",
+  "pullRequestUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/pull/10",
+  "submissionTag": "lab-10-submission-v1",
+  "testStatus": "pass",
+  "notes": "พัฒนาระบบจัดการคำร้องแจ้งซ่อมและบริการพื้นที่ส่วนกลางด้วย",
+  "pageUrl": "https://Jiraphat-Inchan.github.io/engse203-student-labs-68543210004/labs/week-10/",
+  "sourceUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/tree/lab/week-10/labs/week-10/source",
+  "hasPublish": false,
+  "sourceEntries": 0
+}

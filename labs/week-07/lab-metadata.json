@@ -1,0 +1,12 @@
+{
+  "week": "week-07",
+  "title": "Lab 07: REST API with Express and MongoDB",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004",
+  "originalCommit": "18b18ea",
+  "pullRequestUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/pull/7",
+  "submissionTag": "lab-07-submission-v1",
+  "testStatus": "pass",
+  "notes": "พัฒนา REST API สำหรับระบบแจ้งปัญหาพื้นที่ส่วนกลางด้วย Express รองรับการเรียกดูรายการคำร้อง การค้นหาคำร้องตามรหัส การสร้างคำร้อง การเปลี่ยนสถานะ และการลบคำร้อง พร้อมจัดเก็บข้อมูลลงไฟล์ JSON และทดสอบ API ด้วย Postman"
+}

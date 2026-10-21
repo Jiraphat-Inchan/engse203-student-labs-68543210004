@@ -1,0 +1,16 @@
+{
+  "week": "week-12",
+  "title": "Lab 12: Campus Service Request Management",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004",
+  "originalCommit": "18b18ea",
+  "pullRequestUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/pull/12",
+  "submissionTag": "lab-12-submission-v1",
+  "testStatus": "pass",
+  "notes": "พัฒนา REST API สำหรับระบบแจ้งปัญหาพื้นที่ส่วนกลางด้วย Express รองรับการเรียกดูรายการคำร้อง การค้นหาคำร้องตามรหัส การสร้างคำร้อง การเปลี่ยนสถานะ และการลบคำร้อง พร้อมจัดเก็บข้อมูลลงไฟล์ JSON และทดสอบ API ด้วย Postman",
+  "pageUrl": "https://Jiraphat-Inchan.github.io/engse203-student-labs-68543210004/labs/week-12/",
+  "sourceUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/tree/lab/week-12/labs/week-12/source",
+  "hasPublish": false,
+  "sourceEntries": 17
+}

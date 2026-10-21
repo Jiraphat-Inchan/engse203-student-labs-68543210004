@@ -1,0 +1,12 @@
+{
+  "week": "week-09",
+  "title": "Lab 09: REST API with Express and MongoDB",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004",
+  "originalCommit": "abc12345",
+  "pullRequestUrl": "https://github.com/Jiraphat-Inchan/engse203-student-labs-68543210004/pull/9",
+  "submissionTag": "lab-09-submission-v1",
+  "testStatus": "pass",
+  "notes": "พัฒนาระบบจัดการคำร้องแจ้งซ่อมและบริการพื้นที่ส่วนกลางด้วย"
+}
